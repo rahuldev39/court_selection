@@ -8,7 +8,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 0px;
+    padding: 0px 0px;
 }
 .page-title{
   text-align: center;
@@ -19,8 +19,8 @@ body{
     color: #ffd400;
     position: relative;
     padding-bottom: 17px;
-    margin-bottom: 40px;
-    margin-top: 0px;
+    margin-bottom: 22px;
+    margin-top: 18px;
 }
 .page-title h3:after {
     content: "";
@@ -34,9 +34,10 @@ body{
     margin: 0 auto;
 }
 .court-list {
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 .court-block {
     text-align: center;
@@ -56,7 +57,6 @@ body{
 .court-block img {
     width: 100%;
     transition: all ease-in-out 300ms;
-    max-width: 234px;
 }
 .court-block .caption {
     position: absolute;
@@ -70,8 +70,10 @@ body{
 .court-block span{
 
 }
-.work-list{
-text-align: center;
+.work-list {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 .work-list ul {
     padding: 0px;
@@ -99,8 +101,66 @@ text-align: center;
     padding: 1px;
     border-bottom: 4px dotted #16171b;
 }
+.inner-wrapper{
+  display: flex;
+}
+.section-left {
+    border-right: 1px solid #ffd42f1c;
+    min-height: 100vh;
+    margin-right: 20px;
+    padding-right: 20px !important;
+}
+.section-right{
+  flex: 1
+}
+.inner-wrapper section{
+  padding: 20px 0px;
+}
+.work-list .court-block {
+    width: calc(33.3% - 30px);
+}
+.section-left .court-block img {
+    max-width: 200px
+}
+@media (max-width:992px) {
+  .work-list .court-block {
+      width: calc(50% - 30px);
+  }
+}
 @media (max-width:765px) {
+  .section-left .court-block img {
+    max-width: 181px;
+}
+}
+@media (max-width:689px) {
+  .section-right {
+    flex: 1;
+    order: -1;
+}
+  .section-left .court-block img {
+    max-width: 181px;
+}
+.inner-wrapper {
+    flex-direction: column;
+}
+.section-left {
+    border-right: 0px;
+    min-height: auto;
+    margin-right: 0px;
+    padding-right: 0px !important;
+}
+.court-list {
+
+    flex-direction: row;
+}
+}
+@media (max-width:590px) {
   .court-list {
     flex-direction: column;
+}
+}
+@media (max-width:468px) {
+  .work-list .court-block {
+      width: 100%;
   }
 }
